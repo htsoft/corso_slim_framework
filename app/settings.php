@@ -18,8 +18,8 @@ return function (ContainerBuilder $containerBuilder) {
             'db' => [
                 'driver' => 'mysql',
                 'host' => 'localhost',
-                'username' => 'root',
-                'password' => '..........',
+                'username' => 'testuser',
+                'password' => '12345678',
                 'database' => 'yg_games',
                 'charset' => 'utf8mb4',
                 'collation' => 'utf8mb4_unicode_ci',

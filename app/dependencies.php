@@ -35,7 +35,7 @@ return function (ContainerBuilder $containerBuilder) {
             $charset = $dbSettings['charset'];
             $dsn = "$driver:host=$host;dbname=$dbname;charset=$charset";
 
-            return new PDO($dsn, $dbSettings['username'], $dbSettings['password'], $dbSettings['flags']);
+            return new PDO($dsn, $dbSettings['username'], $dbSettings['password']);
         },
     ]);
 };
