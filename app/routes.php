@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use App\Application\Actions\Game\ListGamesAction;
 use App\Application\Actions\Game\SingleGameAction;
+use App\Application\Actions\Leaderboard\ListLeaderboardsAction;
+use App\Application\Actions\Leaderboard\SingleLeaderboardAction;
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\User\ViewUserAction;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -25,5 +27,10 @@ return function (App $app) {
     $app->group('/games', function (Group $group) {
         $group->get('', ListGamesAction::class);
         $group->get('/{id}', SingleGameAction::class);
+    });
+
+    $app->group('/leaderboards', function (Group $group) {
+        $group->get('/{gameid}', ListLeaderboardsAction::class);
+        $group->get('/{gameid}/{leaderboardid}', SingleLeaderboardAction::class);
     });
 };
