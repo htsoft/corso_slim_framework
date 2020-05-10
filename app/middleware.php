@@ -11,7 +11,8 @@ return function (App $app) {
 
     // Aggiunta del plugin per la gestione del token JWT
     $app->add(new JwtAuthentication([
+        "secure" => true,
         "secret" => "corsoslimtokenjwtauthentication",
-        "path" => "/scores",
+        "path" => "/services/public/scores",
     ]));
 };

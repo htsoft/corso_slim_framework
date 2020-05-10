@@ -13,6 +13,9 @@ class ListScoresAction extends ScoreAction
      */
     protected function action(): Response
     {
+        $token = $this->request->getAttribute("token");
+        $datiToken = $token['data'];
+        $this->logger->info("Il parametro passato nel token è: `${datiToken}`");
         $gameId = (int) $this->resolveArg('gameid');
         $gameLb = (int) $this->resolveArg('gamelb');
         $scores = $this->scoreRepository->getAllForGameAndLeaderboard($gameId, $gameLb);
